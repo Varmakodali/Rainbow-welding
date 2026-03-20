@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View our work gallery - Gates, grills, SS fabrication, staircase works by Rainbow Welding Works, Vijayawada.">
+  <title>Our Work Gallery | Rainbow Welding Works, Vijayawada</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+      padding-bottom: 60px;
+    }
+    .gallery-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+    .gallery-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-glow);
+      box-shadow: var(--shadow-glow-orange);
+    }
+    .gallery-image {
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      position: relative;
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+    .gallery-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+    .gallery-card:hover .gallery-image img {
+      transform: scale(1.05);
+    }
+    .gallery-body {
+      padding: 20px;
+    }
+    .gallery-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .gallery-body p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .gallery-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      background: rgba(255, 107, 53, 0.1);
+      color: var(--color-orange);
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .gallery-filter {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .filter-btn {
+      padding: 10px 20px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-color);
+      border-radius: 50px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: rgba(255, 107, 53, 0.15);
+      border-color: var(--color-orange);
+      color: var(--color-orange);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">🌈</div>
+        <span>Rainbow Welding</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="services.html">Our Services</a>
+        <a href="booking.html">Book Now</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="tel:9908073025" class="btn btn-primary btn-sm">📞 Call Now</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 32px;">
+        <span class="section-tag">Our Portfolio</span>
+        <h1 class="section-title">Work Gallery</h1>
+        <p class="section-subtitle">Browse our completed projects — Quality craftsmanship you can trust</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Filter Buttons -->
+    <div class="gallery-filter">
+      <button class="filter-btn active" onclick="filterGallery('all', this)">All Projects</button>
+      <button class="filter-btn" onclick="filterGallery('gate', this)">🚪 Gates</button>
+      <button class="filter-btn" onclick="filterGallery('grill', this)">🪟 Grills</button>
+      <button class="filter-btn" onclick="filterGallery('ss', this)">🔩 SS Works</button>
+      <button class="filter-btn" onclick="filterGallery('staircase', this)">🏗️ Staircases</button>
+      <button class="filter-btn" onclick="filterGallery('welding', this)">⚡ Welding</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid" id="galleryGrid">
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box" style="text-align: center; margin-bottom: 60px;">
+      <h2>Like What You See?</h2>
+      <p>Get similar quality work done for your home or business. Contact us for a free consultation!</p>
+      <div class="cta-actions">
+        <a href="booking.html" class="btn btn-primary btn-lg">📅 Book Our Service</a>
+        <a href="tel:9908073025" class="btn btn-outline btn-lg">📞 Call: 99080 73025</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 Rainbow Welding Works, Vijayawada. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="WhatsApp">W</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="tel:9908073025" aria-label="Call">📞</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/firebase-init.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    const galleryItems = [
+      {
+        title: "Ornamental Bronze Gate",
+        desc: "Exquisite hand-crafted bronze main gate with floral scrollwork and vintage finish, installed at a luxury villa.",
+        category: "gate",
+        icon: "🚪",
+        tag: "Gate Manufacturing",
+        img: "assets/bronze_gate.png"
+      },
+      {
+        title: "Modern Sliding Compound Gate",
+        desc: "Premium motorized sliding gate featuring black metal frame and stylish wooden slats for a contemporary look.",
+        category: "gate",
+        icon: "🚪",
+        tag: "Gate Manufacturing",
+        img: "assets/sliding_gate_real.png"
+      },
+      {
+        title: "SS Designer Staircase Railing",
+        desc: "Polished stainless steel railing with custom geometric design, perfectly integrated with marble interiors.",
+        category: "ss",
+        icon: "🔩",
+        tag: "SS Fabrication",
+        img: "assets/ss_railing_modern.png"
+      },
+      {
+        title: "Intricate Window Security Grill",
+        desc: "Artistic iron window grills with flowing floral patterns, providing both security and elegance.",
+        category: "grill",
+        icon: "🪟",
+        tag: "Grill Works",
+        img: "assets/ornate_window.png"
+      },
+      {
+        title: "Modern Minimalist Grill",
+        desc: "Clean-line black window grills with horizontal bar design for maximum visibility and modern security.",
+        category: "grill",
+        icon: "🪟",
+        tag: "Grill Works",
+        img: "assets/black_window_grill.png"
+      },
+      {
+        title: "Professional Arc Welding",
+        desc: "Precision structural welding being performed by our expert fabrication team with pro-grade safety gear.",
+        category: "welding",
+        icon: "⚡",
+        tag: "Arc Welding",
+        img: "assets/pro_welder.png"
+      },
+      {
+        title: "Heavy-Duty Pipe Welding",
+        desc: "Specialized industrial pipe welding and repair work executed on-site for a major infrastructure project.",
+        category: "welding",
+        icon: "⚡",
+        tag: "Arc Welding",
+        img: "assets/pipe_welding.png"
+      },
+      {
+        title: "SS Multi-Tier Kitchen Rack",
+        desc: "Durable and sanitary 4-tier stainless steel storage solution for commercial and high-end residential kitchens.",
+        category: "ss",
+        icon: "🔩",
+        tag: "SS Fabrication",
+        img: "assets/ss_shelf.png"
+      },
+      {
+        title: "Outdoor Building Railings",
+        desc: "Comprehensive railing and grill installation for a multi-story building facade in Vijayawada.",
+        category: "staircase",
+        icon: "🏗️",
+        tag: "Railing Works",
+        img: "assets/facade_work.png"
+      },
+      {
+        title: "Modern Deck Railing System",
+        desc: "Weather-resistant black iron railings with vertical bar design, perfect for outdoor decks and staircases.",
+        category: "staircase",
+        icon: "🏗️",
+        tag: "Railing Works",
+        img: "assets/outdoor_railing.png"
+      }
+    ];
+
+    function renderGallery(items) {
+      const grid = document.getElementById('galleryGrid');
+      grid.innerHTML = items.map((item, i) => `
+        <div class="gallery-card" style="animation: fadeInUp 0.5s ease ${i * 0.08}s both;">
+          <div class="gallery-image">
+            <img src="${item.img}" alt="${item.title}" loading="lazy" 
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\\'font-size:4rem\\'>${item.icon}</span>';">
+          </div>
+          <div class="gallery-body">
+            <h3>${item.title}</h3>
+            <p>${item.desc}</p>
+            <span class="gallery-tag">${item.tag}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterGallery(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      const filtered = category === 'all' ? galleryItems : galleryItems.filter(item => item.category === category);
+      renderGallery(filtered);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => renderGallery(galleryItems));
+  </script>
+</body>
+</html>

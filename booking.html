@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book welding and fabrication services from Rainbow Welding Works, Vijayawada. Gate grills, SS fabrication, staircase works and more.">
+  <title>Book Our Service | Rainbow Welding Works, Vijayawada</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">🌈</div>
+        <span>Rainbow Welding</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="services.html">Our Services</a>
+        <a href="booking.html" class="active">Book Now</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="tel:9908073025" class="btn btn-primary btn-sm">📞 Call Now</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 16px;">
+        <span class="section-tag">Book a Service</span>
+        <h1 class="section-title">Book Your Welding Work</h1>
+        <p class="section-subtitle">Fill in the details and we'll get back to you with a quote</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKING LAYOUT -->
+  <div class="container">
+    <div class="booking-layout">
+      <!-- BOOKING FORM -->
+      <div class="booking-form">
+
+        <!-- Service Selection -->
+        <h3>🔧 Service Details</h3>
+        <div class="form-group">
+          <label>Type of Service Required *</label>
+          <select id="serviceType">
+            <option value="">-- Select a service --</option>
+            <option value="Gate Manufacturing">🚪 Gate Manufacturing</option>
+            <option value="Window Grills">🪟 Window Grills</option>
+            <option value="SS Fabrication">🔩 SS Fabrication (Railings, Racks, etc.)</option>
+            <option value="Staircase Works">🏗️ Staircase & Railing Works</option>
+            <option value="Arc Welding">⚡ Arc Welding / General Welding</option>
+            <option value="Repair Work">🛠️ Repair & Maintenance</option>
+            <option value="Custom Work">🎨 Custom Fabrication Work</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Describe Your Work *</label>
+          <textarea id="workDescription" placeholder="Please describe what you need. For example: 'I need a new main gate for my house, size 8ft x 6ft, MS with design' or 'SS railing for balcony, 20 running feet'..." rows="4"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Material Preference</label>
+            <select id="materialType">
+              <option value="MS">Mild Steel (MS)</option>
+              <option value="SS">Stainless Steel (SS)</option>
+              <option value="Iron">Iron</option>
+              <option value="Aluminum">Aluminum</option>
+              <option value="Not Sure">Not Sure — Suggest me</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Urgency</label>
+            <select id="urgency">
+              <option value="normal">Normal (3-7 days)</option>
+              <option value="soon">Soon (1-2 days)</option>
+              <option value="urgent">Urgent (Same day / Next day)</option>
+            </select>
+          </div>
+        </div>
+
+        <hr style="border: none; border-top: 1px solid var(--border-color); margin: 24px 0;">
+
+        <!-- Location -->
+        <h3>📍 Your Location</h3>
+        <div class="form-group">
+          <label>Full Address *</label>
+          <input type="text" id="address" placeholder="House/Building No., Street, Area">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Area / Locality *</label>
+            <select id="area">
+              <option value="">Select Area</option>
+              <option value="Christurajupuram">Christurajupuram</option>
+              <option value="Benz Circle">Benz Circle</option>
+              <option value="Labbipet">Labbipet</option>
+              <option value="Governorpet">Governorpet</option>
+              <option value="Moghalrajpuram">Moghalrajpuram</option>
+              <option value="Patamata">Patamata</option>
+              <option value="Gandhinagar">Gandhinagar</option>
+              <option value="Auto Nagar">Auto Nagar</option>
+              <option value="Machavaram">Machavaram</option>
+              <option value="Gunadala">Gunadala</option>
+              <option value="Tadepalli">Tadepalli</option>
+              <option value="Mangalagiri">Mangalagiri</option>
+              <option value="Kanuru">Kanuru</option>
+              <option value="Poranki">Poranki</option>
+              <option value="Gollapudi">Gollapudi</option>
+              <option value="Other">Other Area</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Pincode</label>
+            <input type="text" id="pincode" placeholder="e.g. 520008" maxlength="6">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Landmark (helps us find you)</label>
+          <input type="text" id="landmark" placeholder="Near RCM Church, Beside SBI Bank, etc.">
+        </div>
+
+        <hr style="border: none; border-top: 1px solid var(--border-color); margin: 24px 0;">
+
+        <!-- Schedule -->
+        <h3>📅 Preferred Schedule</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Preferred Date</label>
+            <input type="date" id="bookingDate">
+          </div>
+          <div class="form-group">
+            <label>Preferred Time</label>
+            <select id="bookingTime">
+              <option value="morning">🌅 Morning (8 AM - 12 PM)</option>
+              <option value="afternoon">☀️ Afternoon (12 PM - 4 PM)</option>
+              <option value="evening">🌇 Evening (4 PM - 7 PM)</option>
+              <option value="anytime">🕐 Anytime</option>
+            </select>
+          </div>
+        </div>
+
+        <hr style="border: none; border-top: 1px solid var(--border-color); margin: 24px 0;">
+
+        <!-- Customer Details -->
+        <h3>👤 Your Details</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" id="customerName" placeholder="Full name">
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" id="customerPhone" placeholder="+91 XXXXX XXXXX" maxlength="15">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>WhatsApp Number (if different)</label>
+          <input type="tel" id="customerWhatsapp" placeholder="WhatsApp number for updates">
+        </div>
+
+        <button class="btn btn-primary btn-lg btn-block" onclick="submitBooking()" style="margin-top: 24px;">
+          ✅ Submit Booking Request
+        </button>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="booking-summary">
+        <!-- Shop Info -->
+        <div class="summary-card">
+          <h3>🌈 Rainbow Welding Works</h3>
+          <div class="summary-worker">
+            <div class="summary-worker-avatar" style="background: linear-gradient(135deg, #ff6b35, #ffa500); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border-radius: 12px;">
+              🌈
+            </div>
+            <div class="summary-worker-info">
+              <h4>Fabrication Engineers</h4>
+              <p>Vijayawada, Andhra Pradesh</p>
+              <p style="color: var(--color-amber); font-size: 0.85rem;">⭐ 5.0 Google Rating</p>
+            </div>
+          </div>
+          <div class="summary-line"><span>📍 Location</span><span>Christurajupuram</span></div>
+          <div class="summary-line"><span>📞 Phone</span><span>99080 73025</span></div>
+          <div class="summary-line"><span>🕐 Hours</span><span>8 AM - 7 PM</span></div>
+        </div>
+
+        <div class="summary-card">
+          <h3>💬 About Pricing</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7;">
+            Pricing will be discussed directly between you and Rainbow Welding Works after understanding your requirements.
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 12px; line-height: 1.6;">
+            📞 Call <strong style="color: var(--color-orange);">99080 73025</strong> for a free consultation and quote.
+          </p>
+        </div>
+
+        <!-- Why Book -->
+        <div class="summary-card">
+          <h3>✅ Why Book With Us</h3>
+          <div class="summary-line"><span>🏆 5.0 Google Rating</span><span>✔️</span></div>
+          <div class="summary-line"><span>💰 Fair & Transparent</span><span>✔️</span></div>
+          <div class="summary-line"><span>🏠 Doorstep Service</span><span>✔️</span></div>
+          <div class="summary-line"><span>🔧 Expert Craftsmen</span><span>✔️</span></div>
+          <div class="summary-line"><span>📞 Free Consultation</span><span>✔️</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-content">
+      <div class="modal-icon">✅</div>
+      <h2>Booking Request Sent!</h2>
+      <p id="modalMessage">Thank you! We've received your booking request. Rainbow Welding Works will contact you shortly to confirm the details and provide a final quote.</p>
+      <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; width: 100%;">
+        <a href="tel:9908073025" class="btn btn-primary btn-lg btn-block">📞 Call Now: 99080 73025</a>
+        <button id="waManualBtn" class="btn btn-secondary btn-block" style="border-color: #25D366; color: #25D366;">💬 Send via WhatsApp</button>
+        <a href="dashboard.html" class="btn btn-outline btn-block">📋 View My Bookings</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 Rainbow Welding Works, Vijayawada. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="WhatsApp">W</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="tel:9908073025" aria-label="Call">📞</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/firebase-init.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Set min date to today
+    document.addEventListener('DOMContentLoaded', () => {
+      const dateInput = document.getElementById('bookingDate');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+        dateInput.value = today;
+      }
+
+      // Pre-select service from URL
+      const params = new URLSearchParams(window.location.search);
+      const service = params.get('service');
+      const serviceMap = {
+        'gate-grill': 'Gate Manufacturing',
+        'ss-fabrication': 'SS Fabrication',
+        'staircase': 'Staircase Works',
+        'arc-welding': 'Arc Welding',
+        'repair': 'Repair Work'
+      };
+      if (service && serviceMap[service]) {
+        const select = document.getElementById('serviceType');
+        select.value = serviceMap[service];
+      }
+    });
+
+    function submitBooking() {
+      const required = [
+        { id: 'serviceType', label: 'Service Type' },
+        { id: 'workDescription', label: 'Work Description' },
+        { id: 'address', label: 'Address' },
+        { id: 'area', label: 'Area' },
+        { id: 'customerName', label: 'Your Name' },
+        { id: 'customerPhone', label: 'Phone Number' }
+      ];
+
+      for (const field of required) {
+        const el = document.getElementById(field.id);
+        if (!el || !el.value.trim()) {
+          showToast(`Please fill in: ${field.label}`, 'error');
+          el.focus();
+          el.style.borderColor = 'var(--color-red)';
+          setTimeout(() => el.style.borderColor = '', 2000);
+          return;
+        }
+      }
+
+      const booking = {
+        workerName: 'Rainbow Welding Works',
+        workerPhoto: '',
+        workerSpecialization: 'Fabrication Engineers, Vijayawada',
+        serviceType: document.getElementById('serviceType').value,
+        workDescription: document.getElementById('workDescription').value,
+        materialType: document.getElementById('materialType').value,
+        urgency: document.getElementById('urgency').value,
+        location: {
+          address: document.getElementById('address').value,
+          city: document.getElementById('area').value + ', Vijayawada',
+          state: 'Andhra Pradesh',
+          pincode: document.getElementById('pincode').value,
+          landmark: document.getElementById('landmark').value
+        },
+        schedule: {
+          date: document.getElementById('bookingDate').value,
+          time: document.getElementById('bookingTime').value
+        },
+        customer: {
+          name: document.getElementById('customerName').value,
+          phone: document.getElementById('customerPhone').value,
+          whatsapp: document.getElementById('customerWhatsapp').value
+        },
+        pricing: {
+          total: 0,
+          note: 'Quote pending - will be provided after site visit'
+        }
+      };
+
+      saveBooking(booking);
+
+      // Construct WhatsApp message
+      const shopPhone = "919908073025";
+      const message = `*NEW BOOKING REQUEST*%0A%0A` +
+        `*Service:* ${booking.serviceType}%0A` +
+        `*Description:* ${booking.workDescription}%0A` +
+        `*Material:* ${booking.materialType}%0A` +
+        `*Urgency:* ${booking.urgency}%0A%0A` +
+        `*Location:* ${booking.location.address}, ${booking.location.city}%0A` +
+        `*Landmark:* ${booking.location.landmark}%0A%0A` +
+        `*Customer:* ${booking.customer.name}%0A` +
+        `*Phone:* ${booking.customer.phone}%0A%0A` +
+        `*Schedule:* ${booking.schedule.date} (${booking.schedule.time})%0A%0A` +
+        `_Sent from Rainbow Welding Works Website_`;
+      
+      const whatsappUrl = `https://wa.me/${shopPhone}?text=${message}`;
+
+      // Update modal message to inform user about redirection
+      document.getElementById('modalMessage').innerHTML = `Details saved! 📲 <strong>Redirecting you to WhatsApp</strong> to send this request to our shop owner instantly. If it doesn't open, <a href="${whatsappUrl}" target="_blank" style="color:var(--color-orange);">click here</a>.`;
+      
+      document.getElementById('waManualBtn').onclick = () => window.open(whatsappUrl, '_blank');
+      document.getElementById('successModal').classList.add('active');
+
+      // Small delay then redirect
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

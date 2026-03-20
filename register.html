@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register as a welding professional on WeldPro. Add your skills, set your rates, and start getting bookings.">
+  <title>Register as Worker | WeldPro</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">⚡</div>
+        <span>WeldPro</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="workers.html">Find Workers</a>
+        <a href="booking.html">Book Now</a>
+        <a href="dashboard.html">My Bookings</a>
+      </div>
+      <div class="nav-actions">
+        <a href="register.html" class="btn btn-primary btn-sm active">Register as Worker</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 16px;">
+        <span class="section-tag">Join WeldPro</span>
+        <h1 class="section-title">Register as a Welding Professional</h1>
+        <p class="section-subtitle">Create your profile and start getting bookings from customers near you</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- REGISTRATION FORM -->
+  <div class="container">
+    <div class="register-layout">
+      <!-- Step Progress -->
+      <div class="step-progress" id="stepProgress">
+        <div class="step-item active" data-step="1">
+          <div class="step-dot">1</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-item" data-step="2">
+          <div class="step-dot">2</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-item" data-step="3">
+          <div class="step-dot">3</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-item" data-step="4">
+          <div class="step-dot">4</div>
+        </div>
+      </div>
+
+      <div class="register-form">
+        <!-- Step 1: Personal Info -->
+        <div class="form-step active" id="step1">
+          <h3>👤 Personal Information</h3>
+          <p class="step-desc">Tell us about yourself so customers can know who they're booking</p>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" id="regName" placeholder="Your full name">
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" id="regPhone" placeholder="+91 XXXXX XXXXX" maxlength="15">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" id="regEmail" placeholder="your.email@example.com">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Date of Birth</label>
+              <input type="date" id="regDob">
+            </div>
+            <div class="form-group">
+              <label>Gender</label>
+              <select id="regGender">
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Profile Photo URL (optional)</label>
+            <input type="url" id="regPhoto" placeholder="https://example.com/photo.jpg">
+          </div>
+          <div class="form-actions">
+            <div></div>
+            <button class="btn btn-primary" onclick="nextStep(2)">Next: Skills & Experience →</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Skills & Experience -->
+        <div class="form-step" id="step2">
+          <h3>🔧 Skills & Experience</h3>
+          <p class="step-desc">What types of welding can you do? This helps customers find you</p>
+          <div class="form-group">
+            <label>Welding Specializations *</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item"><input type="checkbox" value="MIG Welding"> MIG Welding</label>
+              <label class="checkbox-item"><input type="checkbox" value="TIG Welding"> TIG Welding</label>
+              <label class="checkbox-item"><input type="checkbox" value="Stick Welding"> Stick Welding</label>
+              <label class="checkbox-item"><input type="checkbox" value="Pipe Welding"> Pipe Welding</label>
+              <label class="checkbox-item"><input type="checkbox" value="Structural Welding"> Structural</label>
+              <label class="checkbox-item"><input type="checkbox" value="Underwater Welding"> Underwater</label>
+              <label class="checkbox-item"><input type="checkbox" value="Spot Welding"> Spot Welding</label>
+              <label class="checkbox-item"><input type="checkbox" value="Aluminum Welding"> Aluminum</label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Years of Experience *</label>
+              <input type="number" id="regExperience" placeholder="e.g. 5" min="0" max="50">
+            </div>
+            <div class="form-group">
+              <label>Primary Specialization *</label>
+              <select id="regPrimarySpec">
+                <option value="">Select</option>
+                <option value="MIG Welding">MIG Welding</option>
+                <option value="TIG Welding">TIG Welding</option>
+                <option value="Stick Welding">Stick Welding</option>
+                <option value="Pipe Welding">Pipe Welding</option>
+                <option value="Structural Welding">Structural Welding</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Certifications</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item"><input type="checkbox" value="AWS Certified"> AWS Certified</label>
+              <label class="checkbox-item"><input type="checkbox" value="ASME IX"> ASME IX</label>
+              <label class="checkbox-item"><input type="checkbox" value="API 1104"> API 1104</label>
+              <label class="checkbox-item"><input type="checkbox" value="CWI"> CWI</label>
+              <label class="checkbox-item"><input type="checkbox" value="NSQF"> NSQF</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>About You</label>
+            <textarea id="regAbout" placeholder="Write a brief description about your experience and what makes you stand out..." rows="3"></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-secondary" onclick="prevStep(1)">← Back</button>
+            <button class="btn btn-primary" onclick="nextStep(3)">Next: Location →</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Location & Availability -->
+        <div class="form-step" id="step3">
+          <h3>📍 Location & Availability</h3>
+          <p class="step-desc">Where do you operate and when are you available for work?</p>
+          <div class="form-group">
+            <label>City / Area *</label>
+            <input type="text" id="regCity" placeholder="Enter your city">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>State *</label>
+              <select id="regState">
+                <option value="">Select State</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="West Bengal">West Bengal</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Service Radius (km)</label>
+              <select id="regRadius">
+                <option value="5">5 km</option>
+                <option value="10" selected>10 km</option>
+                <option value="20">20 km</option>
+                <option value="50">50 km</option>
+                <option value="100">Anywhere in city</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Working Days *</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item"><input type="checkbox" value="Mon" checked> Mon</label>
+              <label class="checkbox-item"><input type="checkbox" value="Tue" checked> Tue</label>
+              <label class="checkbox-item"><input type="checkbox" value="Wed" checked> Wed</label>
+              <label class="checkbox-item"><input type="checkbox" value="Thu" checked> Thu</label>
+              <label class="checkbox-item"><input type="checkbox" value="Fri" checked> Fri</label>
+              <label class="checkbox-item"><input type="checkbox" value="Sat" checked> Sat</label>
+              <label class="checkbox-item"><input type="checkbox" value="Sun"> Sun</label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Working Hours Start</label>
+              <select id="regStartTime">
+                <option value="06:00">6:00 AM</option>
+                <option value="07:00">7:00 AM</option>
+                <option value="08:00" selected>8:00 AM</option>
+                <option value="09:00">9:00 AM</option>
+                <option value="10:00">10:00 AM</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Working Hours End</label>
+              <select id="regEndTime">
+                <option value="16:00">4:00 PM</option>
+                <option value="17:00">5:00 PM</option>
+                <option value="18:00" selected>6:00 PM</option>
+                <option value="19:00">7:00 PM</option>
+                <option value="20:00">8:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-secondary" onclick="prevStep(2)">← Back</button>
+            <button class="btn btn-primary" onclick="nextStep(4)">Next: Pricing →</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Pricing -->
+        <div class="form-step" id="step4">
+          <h3>💰 Pricing</h3>
+          <p class="step-desc">Set your rates. Customers will see this when browsing your profile</p>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Hourly Rate (₹) *</label>
+              <input type="number" id="regHourlyRate" placeholder="e.g. 500" min="100">
+            </div>
+            <div class="form-group">
+              <label>Minimum Charge (₹) *</label>
+              <input type="number" id="regMinCharge" placeholder="e.g. 1000" min="100">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Travel Fee (₹)</label>
+              <input type="number" id="regTravelFee" placeholder="e.g. 200" min="0">
+            </div>
+            <div class="form-group">
+              <label>Can Provide Materials?</label>
+              <select id="regMaterials">
+                <option value="no">No</option>
+                <option value="yes">Yes, at additional cost</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Additional Notes</label>
+            <textarea id="regNotes" placeholder="Any additional information about your pricing or services..." rows="3"></textarea>
+          </div>
+
+          <div style="background: rgba(255, 107, 53, 0.08); border: 1px solid rgba(255, 107, 53, 0.2); border-radius: var(--radius-md); padding: 20px; margin-top: 16px;">
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 10px;">
+              ⚡ <strong style="color: var(--text-primary);">Quick Summary</strong>
+            </p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.7;">
+              By registering, your profile will be visible to customers in your area. You'll receive booking requests which you can accept or decline. WeldPro does not charge any registration fees.
+            </p>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-secondary" onclick="prevStep(3)">← Back</button>
+            <button class="btn btn-primary btn-lg" onclick="submitRegistration()">✅ Complete Registration</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal-overlay" id="registerModal">
+    <div class="modal-content">
+      <div class="modal-icon">🎉</div>
+      <h2>Registration Complete!</h2>
+      <p>Welcome to WeldPro! Your profile is now live. Customers in your area can find and book you for welding work.</p>
+      <a href="index.html" class="btn btn-primary btn-lg">Go to Home</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 WeldPro. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/firebase-init.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    let currentStep = 1;
+
+    function nextStep(step) {
+      // Validate current step
+      if (!validateStep(currentStep)) return;
+
+      currentStep = step;
+      updateStepUI();
+    }
+
+    function prevStep(step) {
+      currentStep = step;
+      updateStepUI();
+    }
+
+    function updateStepUI() {
+      // Hide all steps, show current
+      document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+      document.getElementById(`step${currentStep}`).classList.add('active');
+
+      // Update progress dots
+      document.querySelectorAll('.step-item').forEach((item, index) => {
+        const stepNum = index + 1;
+        item.classList.remove('active', 'completed');
+        if (stepNum === currentStep) item.classList.add('active');
+        else if (stepNum < currentStep) item.classList.add('completed');
+      });
+
+      // Update progress lines
+      document.querySelectorAll('.step-line').forEach((line, index) => {
+        line.classList.toggle('active', index < currentStep - 1);
+      });
+
+      // Scroll to top of form
+      document.querySelector('.register-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function validateStep(step) {
+      switch (step) {
+        case 1: {
+          const name = document.getElementById('regName').value.trim();
+          const phone = document.getElementById('regPhone').value.trim();
+          const email = document.getElementById('regEmail').value.trim();
+          if (!name) { showToast('Please enter your full name', 'error'); return false; }
+          if (!phone) { showToast('Please enter your phone number', 'error'); return false; }
+          if (!email) { showToast('Please enter your email', 'error'); return false; }
+          return true;
+        }
+        case 2: {
+          const checked = document.querySelectorAll('#step2 .checkbox-group:first-of-type input:checked');
+          const experience = document.getElementById('regExperience').value;
+          const spec = document.getElementById('regPrimarySpec').value;
+          if (checked.length === 0) { showToast('Please select at least one welding type', 'error'); return false; }
+          if (!experience) { showToast('Please enter your experience', 'error'); return false; }
+          if (!spec) { showToast('Please select your primary specialization', 'error'); return false; }
+          return true;
+        }
+        case 3: {
+          const city = document.getElementById('regCity').value.trim();
+          const state = document.getElementById('regState').value;
+          if (!city) { showToast('Please enter your city', 'error'); return false; }
+          if (!state) { showToast('Please select your state', 'error'); return false; }
+          return true;
+        }
+        case 4: {
+          const rate = document.getElementById('regHourlyRate').value;
+          const min = document.getElementById('regMinCharge').value;
+          if (!rate) { showToast('Please set your hourly rate', 'error'); return false; }
+          if (!min) { showToast('Please set your minimum charge', 'error'); return false; }
+          return true;
+        }
+      }
+      return true;
+    }
+
+    function submitRegistration() {
+      if (!validateStep(4)) return;
+
+      // Collect all data
+      const registration = {
+        name: document.getElementById('regName').value,
+        phone: document.getElementById('regPhone').value,
+        email: document.getElementById('regEmail').value,
+        specialization: document.getElementById('regPrimarySpec').value,
+        experience: document.getElementById('regExperience').value,
+        city: document.getElementById('regCity').value,
+        state: document.getElementById('regState').value,
+        hourlyRate: document.getElementById('regHourlyRate').value,
+        minCharge: document.getElementById('regMinCharge').value,
+        travelFee: document.getElementById('regTravelFee').value || 0,
+        registeredAt: new Date().toISOString()
+      };
+
+      // Save to localStorage
+      const registrations = JSON.parse(localStorage.getItem('weldRegistrations') || '[]');
+      registrations.push(registration);
+      localStorage.setItem('weldRegistrations', JSON.stringify(registrations));
+
+      // Show success modal
+      document.getElementById('registerModal').classList.add('active');
+    }
+  </script>
+</body>
+</html>
